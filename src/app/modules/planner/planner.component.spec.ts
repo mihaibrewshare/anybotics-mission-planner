@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoMissionsModule } from 'src/app/shared/no-missions/no-missions.module';
 
 describe('PlannerComponent', () => {
   let component: PlannerComponent;
@@ -31,6 +32,7 @@ describe('PlannerComponent', () => {
         MatFormFieldModule,
         MatSnackBarModule,
         MatTableModule,
+        NoMissionsModule,
       ],
     });
     fixture = TestBed.createComponent(PlannerComponent);

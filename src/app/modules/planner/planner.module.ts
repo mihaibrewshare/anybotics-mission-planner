@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
+import { NoMissionsModule } from 'src/app/shared/no-missions/no-missions.module';
 
 const routes: Routes = [
   {
@@ -30,6 +31,7 @@ const routes: Routes = [
     MatFormFieldModule,
     MatSnackBarModule,
     MatTableModule,
+    NoMissionsModule,
   ],
   exports: [PlannerFormComponent, PlannerTableComponent],
 })

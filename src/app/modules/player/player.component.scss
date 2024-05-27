@@ -1,0 +1,69 @@
+.player-container {
+  display: flex;
+  margin: 1rem;
+
+  .player-overview {
+    width: 25%;
+    margin-right: 1rem; /* Add margin between player-overview and player */
+
+    h1 {
+      color: #333;
+    }
+
+    .mat-expansion-panel {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .player {
+    width: 75%;
+
+    .player-display {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      border: 1px solid lightgray;
+
+      .mission-point {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #cfe2f3;
+        border: 1px solid black;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 10px;
+        cursor: pointer;
+      }
+
+      .player-object {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    .player-button {
+      margin-top: 1rem;
+      margin-right: 0.5rem;
+
+      mat-icon {
+        margin: 0;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+
+    .player-overview,
+    .player {
+      width: 100%;
+    }
+  }
+}
+
+.no-missions-message {
+  margin-top: 1rem;
+  text-align: center;
+}

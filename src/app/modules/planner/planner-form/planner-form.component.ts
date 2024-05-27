@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MissionDetails } from 'src/app/interfaces/missionDetails';
-import { MissionServiceService } from 'src/app/services/mission-service.service';
+import { MissionService } from 'src/app/services/mission-service.service';
 
 @Component({
   selector: 'mpl-planner-form',
@@ -15,21 +15,9 @@ export class PlannerFormComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private missionService: MissionServiceService,
+    private missionService: MissionService,
     private _snackBar: MatSnackBar
   ) {}
-
-  ngOnInit(): void {
-    this.formGroup = this.formBuilder.group({
-      missionName: ['', Validators.required],
-      xCoordinate: ['', Validators.required],
-      yCoordinate: ['', Validators.required],
-    });
-
-    this.missionService.getMissions().subscribe((missions: any[]) => {
-      this.missions = missions;
-    });
-  }
 
   onSubmit() {
     const formData = this.formGroup.value;
@@ -69,6 +57,18 @@ export class PlannerFormComponent implements OnInit {
   openSnackBar(message: string) {
     this._snackBar.open(message, '', {
       duration: 2000,
+    });
+  }
+
+  ngOnInit(): void {
+    this.formGroup = this.formBuilder.group({
+      missionName: ['', Validators.required],
+      xCoordinate: ['', Validators.required],
+      yCoordinate: ['', Validators.required],
+    });
+
+    this.missionService.getMissions().subscribe((missions: any[]) => {
+      this.missions = missions;
     });
   }
 }

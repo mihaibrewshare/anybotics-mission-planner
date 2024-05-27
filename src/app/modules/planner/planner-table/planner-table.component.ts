@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MissionDetails } from 'src/app/interfaces/missionDetails';
-import { MissionServiceService } from 'src/app/services/mission-service.service';
+import { MissionService } from 'src/app/services/mission-service.service';
 
 @Component({
   selector: 'mpl-planner-table',
@@ -17,13 +17,19 @@ export class PlannerTableComponent implements OnInit {
     'yCoordinate',
   ];
 
-  constructor(private missionService: MissionServiceService) {
+  constructor(private missionService: MissionService) {
     this.missions = new MatTableDataSource<MissionDetails>();
   }
 
+  getMissions() {
+    this.missionService
+      .getMissions()
+      .subscribe((missions: MissionDetails[]) => {
+        this.missions.data = missions;
+      });
+  }
+
   ngOnInit(): void {
-    this.missionService.getMissions().subscribe((missions: any[]) => {
-      this.missions.data = missions;
-    });
+    this.getMissions();
   }
 }
