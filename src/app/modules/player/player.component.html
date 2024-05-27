@@ -1,1 +1,36 @@
-<p>player page</p>
+<div class="player-container" *ngIf="missions.length > 0; else noMissions">
+    <div class="player-overview">
+        <h1>Mission</h1>
+        <mat-accordion>
+            <mat-expansion-panel *ngFor="let mission of missions">
+                <mat-expansion-panel-header>
+                    #{{ mission.id }} {{ mission.missionName }}
+                </mat-expansion-panel-header>
+                <div>
+                    (x, y): ({{ mission.xCoordinate }}, {{ mission.yCoordinate }})
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+    <div class="player">
+        <div class="player-display">
+            <div *ngFor="let mission of missions" class="mission-point" [style.left.px]="mission.xCoordinate * 3"
+                [style.top.px]="mission.yCoordinate * 3"
+                [matTooltip]="mission.missionName + ': ' + '(' + mission.xCoordinate + ', ' + mission.yCoordinate + ')'">
+                #{{ mission.id }}
+            </div>
+            <img #player class="player-object" src="assets/utils/anybotics-robot.png" alt="Player Image" />
+        </div>
+        <button mat-raised-button (click)="startMission()" class="player-button">
+            <mat-icon>play_arrow</mat-icon>
+        </button>
+        <button mat-raised-button (click)="stopMission()" class="player-button">
+            <mat-icon>stop</mat-icon>
+        </button>
+    </div>
+</div>
+
+<!-- Placeholder in case of no active missions -->
+<ng-template #noMissions>
+    <mpl-no-missions [text]="'There are no missions.'"></mpl-no-missions>
+</ng-template>

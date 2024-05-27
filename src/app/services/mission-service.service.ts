@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class MissionServiceService {
+export class MissionService {
   private missionsKey = 'missions';
   private missionsSubject$ = new BehaviorSubject<MissionDetails[]>([]);
 
