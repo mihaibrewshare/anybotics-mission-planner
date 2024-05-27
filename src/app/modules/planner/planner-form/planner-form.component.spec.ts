@@ -1,39 +1,31 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { PlannerComponent } from './planner.component';
-import { PlannerFormComponent } from './planner-form/planner-form.component';
-import { PlannerTableComponent } from './planner-table/planner-table.component';
+
+import { PlannerFormComponent } from './planner-form.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-describe('PlannerComponent', () => {
-  let component: PlannerComponent;
-  let fixture: ComponentFixture<PlannerComponent>;
+describe('PlannerFormComponent', () => {
+  let component: PlannerFormComponent;
+  let fixture: ComponentFixture<PlannerFormComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        PlannerComponent,
-        PlannerFormComponent,
-        PlannerTableComponent,
-      ],
+      declarations: [PlannerFormComponent],
       imports: [
         BrowserAnimationsModule,
         MatSnackBarModule,
+        MatFormFieldModule,
         FormsModule,
         ReactiveFormsModule,
         MatButtonModule,
         MatInputModule,
-        MatFormFieldModule,
-        MatSnackBarModule,
-        MatTableModule,
       ],
     });
-    fixture = TestBed.createComponent(PlannerComponent);
+    fixture = TestBed.createComponent(PlannerFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
