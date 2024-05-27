@@ -1,0 +1,31 @@
+<mat-table [dataSource]="missions" class="mat-elevation-z8" *ngIf="missions.data.length > 0; else noMissions">
+    <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef>#</mat-header-cell>
+        <mat-cell *matCellDef="let mission">{{ mission.id }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="missionName">
+        <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+        <mat-cell *matCellDef="let mission">{{ mission.missionName }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="xCoordinate">
+        <mat-header-cell *matHeaderCellDef>X</mat-header-cell>
+        <mat-cell *matCellDef="let mission">{{ mission.xCoordinate }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="yCoordinate">
+        <mat-header-cell *matHeaderCellDef>Y</mat-header-cell>
+        <mat-cell *matCellDef="let mission">{{ mission.yCoordinate }}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
+
+<!-- Placeholder in case of no active missions -->
+<ng-template #noMissions>
+    <div class="no-missions-message">
+        There are no missions.
+    </div>
+</ng-template>
