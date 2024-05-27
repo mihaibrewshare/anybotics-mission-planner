@@ -7,6 +7,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { NoMissionsModule } from 'src/app/shared/no-missions/no-missions.module';
+import { PlayerOverviewComponent } from './player-overview/player-overview.component';
+import { PlayerDisplayComponent } from './player-display/player-display.component';
 
 const routes: Routes = [
   {
@@ -16,7 +18,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [PlayerComponent],
+  declarations: [PlayerComponent, PlayerOverviewComponent, PlayerDisplayComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

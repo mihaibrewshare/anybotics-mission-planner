@@ -1,0 +1,14 @@
+<div class="player-display">
+    <div *ngFor="let mission of missions" class="mission-point" [style.left.px]="mission.xCoordinate * 3"
+        [style.top.px]="mission.yCoordinate * 3"
+        [matTooltip]="mission.missionName + ': ' + '(' + mission.xCoordinate + ', ' + mission.yCoordinate + ')'">
+        #{{ mission.id }}
+    </div>
+    <img #player class="player-object" src="assets/utils/anybotics-robot.png" alt="Player Image" />
+</div>
+<button mat-raised-button (click)="startMission()" class="player-button">
+    <mat-icon>play_arrow</mat-icon>
+</button>
+<button mat-raised-button (click)="stopMission()" class="player-button">
+    <mat-icon>stop</mat-icon>
+</button>
