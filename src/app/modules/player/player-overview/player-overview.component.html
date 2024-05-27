@@ -1,0 +1,11 @@
+<h1>Mission</h1>
+<mat-accordion [multi]="true">
+    <mat-expansion-panel *ngFor="let mission of missions">
+        <mat-expansion-panel-header>
+            #{{ mission.id }} {{ mission.missionName }}
+        </mat-expansion-panel-header>
+        <div>
+            (x, y): ({{ mission.xCoordinate }}, {{ mission.yCoordinate }})
+        </div>
+    </mat-expansion-panel>
+</mat-accordion>
