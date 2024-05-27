@@ -1,1 +1,65 @@
-<p>home page</p>
+<div class="container">
+    <h1>Welcome to Anybotics Mission Planner</h1>
+    <p><strong>Anybotics Mission Planner</strong> is an Angular application (version 16.1.0) designed to facilitate the
+        creation, deployment, and monitoring of missions for Anybotics robots. Users can create missions specifying the
+        robot's
+        desired destinations and then deploy these missions to observe how the robot completes its tasks.</p>
+
+    <h2>Getting Started</h2>
+    <p>Follow these steps to set up and run the Anybotics Mission Planner:</p>
+    <ol>
+        <li>
+            <strong>Clone the Repository:</strong>
+            <pre><code matTooltip="Copy to clipboard" (click)="copyToClipboard('git clone https://github.com/mihaibrewshare/anybotics-mission-planner')">git clone https://github.com/mihaibrewshare/anybotics-mission-planner</code></pre>
+        </li>
+        <li>
+            <strong>Install Dependencies:</strong>
+            <pre><code matTooltip="Copy to clipboard" (click)="copyToClipboard('npm install')">npm install</code></pre>
+        </li>
+        <li>
+            <strong>Serve the Application:</strong>
+            <pre><code matTooltip="Copy to clipboard" (click)="copyToClipboard('ng serve')">ng serve</code></pre>
+        </li>
+    </ol>
+
+    <h2>Application Features</h2>
+
+    <h3><strong>Navbar</strong></h3>
+    <ul>
+        <li><strong>Logo:</strong> Clicking on the logo redirects to the Home page.</li>
+        <li><strong>Hamburger Icon:</strong> Clicking on the hamburger icon opens a menu to help with navigation.</li>
+        <li><strong>Share Button:</strong> Clicking on the share button redirects to the project's GitHub repository.
+        </li>
+    </ul>
+
+    <h3><strong>Home Page</strong></h3>
+    <p>The <strong>Home Page</strong> contains instructions on how to install and use the application, providing a quick
+        start guide for new users.</p>
+
+    <h3><strong>Planner Page</strong></h3>
+    <p>The <strong>Planner Page</strong> allows users to create missions for the robot. Key features include:</p>
+    <ul>
+        <li><strong>Mission Creation:</strong> Users can create a mission by providing a name and specifying the X and Y
+            coordinates (in a Cartesian system) for the robot's destination.</li>
+        <li><strong>Mission Table:</strong> All created missions are displayed in a table format for easy viewing and
+            management.</li>
+    </ul>
+
+    <h3><strong>Player Page</strong></h3>
+    <p>The <strong>Player Page</strong> is used to deploy and monitor missions created on the Planner page. Features
+        include:</p>
+    <ul>
+        <li><strong>Deploy Missions:</strong> Users can deploy any of the created missions.</li>
+        <li><strong>Animation Control:</strong></li>
+        <ul>
+            <li><strong>Play Button:</strong> Starts the animation, showing the path taken by the robot.</li>
+            <li><strong>Stop Button:</strong> Stops the animation.</li>
+        </ul>
+    </ul>
+
+    <p>This documentation provides a concise guide to the main features and setup of the Anybotics Mission Planner
+        application. For further details and updates, please refer to the project's <strong><a
+                href="https://github.com/mihaibrewshare/anybotics-mission-planner" target="_blank">GitHub
+                repository</a></strong>.
+    </p>
+</div>
